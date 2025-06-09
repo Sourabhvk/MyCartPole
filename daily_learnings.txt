@@ -1,0 +1,58 @@
+Daily Learnings - CartPole Project
+===================================
+Date: June 9, 2025
+Timestamp: 19:08 UTC
+
+Observations:
+=============
+
+CartPole Environment has 4 observation values (float32 array):
+
+1. Cart Position
+   - The horizontal position of the cart on the track
+   - Continuous value representing where the cart is located
+
+2. Cart Velocity
+   - The speed and direction of the cart's movement
+   - Positive values indicate rightward movement, negative values indicate leftward movement
+
+3. Pole Angle
+   - The angle of the pole relative to the vertical position
+   - Measured in radians
+   - Positive values indicate the pole is leaning to the right, negative values indicate leaning to the left
+
+4. Pole Angular Velocity
+   - The rate at which the pole's angle is changing
+   - How fast the pole is rotating/falling
+
+Space Types in Gymnasium:
+========================
+
+Box Space:
+----------
+In Gymnasium, a Box is a specific type of space used to represent data that is:
+
+- Continuous: The values can be any real number within a given range (not just whole numbers). 
+  Think of a dimmer switch, not an on/off switch.
+
+- Multi-dimensional: It can represent:
+  * A single number
+  * A vector (like in CartPole's 4 values)
+  * Even an image (a 2D or 3D array of pixels)
+
+Action Space: Discrete(2):
+-------------------------
+This means your agent can choose from a discrete (countable) set of 2 actions.
+
+Typically, these are 0 and 1:
+- In CartPole: 
+  * 0 means push left
+  * 1 means push right
+
+Key Takeaways:
+=============
+- Observation space is continuous (Box) with 4 dimensions
+- Action space is discrete with 2 possible actions
+- The agent must learn to balance the pole by choosing the right action based on the 4 observations
+- This is a classic reinforcement learning problem where continuous state space meets discrete action space
+
